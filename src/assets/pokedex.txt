@@ -1,0 +1,80 @@
+#-------#
+nome: Bulbasaur
+tipoP: GRASS, POISON
+vida: 45
+speed: 45
+attack: 45
+spdAttack: 65
+defense: 49
+spdDefense: 65
+levelType: MEDIUM_SLOW
+#-------#
+nome: Charmander
+tipoP: FIRE
+vida: 39
+speed: 65
+attack: 52
+spdAttack: 60
+defense: 43
+spdDefense: 50
+levelType: MEDIUM_SLOW
+#-------#
+nome: Squirtle
+tipoP: WATER
+vida: 44
+speed: 43
+attack: 48
+spdAttack: 50
+defense: 65
+spdDefense: 64
+levelType: MEDIUM_SLOW
+#-------#
+nome: Jolteon
+Tipo: ELETRIC
+HP: 65
+Velocidade: 130
+Ataque: 65
+AtaqueEspecial: 110
+Defesa: 60
+DefesaEspecial: 95
+levelType: MEDIUM_FAST
+#-------#
+Nome: Dragonite
+Tipo: DRAGON, FLYING
+HP: 91
+Velocidade: 80
+Ataque: 134
+AtaqueEspecial: 100
+Defesa: 95
+DefesaEspecial: 100
+levelType: SLOW
+#-------#
+Nome: Vaporeon
+Tipo: WATER
+HP: 130
+Velocidade: 65
+Ataque: 65
+AtaqueEspecial: 110
+Defesa: 60
+DefesaEspecial: 95
+levelType: MEDIUM_FAST
+#-------#
+Nome: Snorlax
+Tipo: NORMAL
+HP: 160
+Velocidade: 30
+Ataque: 110
+AtaqueEspecial: 65
+Defesa: 65
+DefesaEspecial: 110
+levelType: SLOW
+#-------#
+Nome: Pinsir
+Tipo: BUG
+HP: 65
+Velocidade: 85
+Ataque: 125
+AtaqueEspecial: 55
+Defesa: 100
+DefesaEspecial: 70
+levelType: SLOW
