@@ -7,41 +7,41 @@ import pokemon.PokemonEntity;
 import pokecomp.attacks.Attacks;
 
 public class Battle {
-    int turnoAtual = 0;
+    int currencyTurn = 0;
 
-    public void batalhaAtiva(PokemonEntity jogador, PokemonEntity inimigo) {
+    public void batalhaAtiva(PokemonEntity player, PokemonEntity enemy) {
 
-        if (turnoAtual == 0) {
-            JOptionPane.showMessageDialog(null, "A batalha começou! Você lançou " + jogador.getName());
-            JOptionPane.showMessageDialog(null, "Adversário jogou " + inimigo.getName());
+        if (currencyTurn == 0) {
+            JOptionPane.showMessageDialog(null, "A batalha começou! Você lançou " + player.getName());
+            JOptionPane.showMessageDialog(null, "Adversário jogou " + enemy.getName());
         }
         do {
-            turnoJogador(jogador, inimigo);
+            turnPlayer(player, enemy);
 
         } while (true);
     }
 
-    public void turnoJogador(PokemonEntity jogador, PokemonEntity inimigo) {
-        turnoAtual++;
-        if (jogador.getHp() > 0) {
+    public void turnPlayer(PokemonEntity player, PokemonEntity enemy) {
+        currencyTurn++;
+        if (player.getHp() > 0) {
             do {
-                String opAtaque = "\n";
-                for (int i = 0; i < jogador.getAttacks().length; i++) {
-                    opAtaque += i + " - " + jogador.getAttack(i).getName() + "\n";
+                String opAttack = "\n";
+                for (int i = 0; i < player.getAttacks().length; i++) {
+                    opAttack += i + " - " + player.getAttack(i).getName() + "\n";
                 }
                 int op = Integer
-                        .parseInt(JOptionPane.showInputDialog(jogador.getName() + " - " + jogador.getHp() + "/"
-                                + jogador.getMaxHp() + "\n" + inimigo.getName() + " - " + inimigo.getHp() + "/"
-                                + inimigo.getMaxHp() + "\nEscolha seu ataque: " + opAtaque));
-                if (!jogador.attackIsNull(op)) {
-                    Attacks ataque = jogador.getAttack(op);
-                    ataque.atacando(jogador, inimigo);
+                        .parseInt(JOptionPane.showInputDialog(player.getName() + " - " + player.getHp() + "/"
+                                + player.getMaxHp() + "\n" + enemy.getName() + " - " + enemy.getHp() + "/"
+                                + enemy.getMaxHp() + "\nEscolha seu attack: " + opAttack));
+                if (!player.attackIsNull(op)) {
+                    Attacks attack = player.getAttack(op);
+                    attack.attacking(player, enemy);
                     break;
                 } else {
-                    JOptionPane.showMessageDialog(null, "Esse ataque não é válido");
+                    JOptionPane.showMessageDialog(null, "Esse attack não é válido");
                 }
             } while (true);
-            turnoInimigo(jogador, inimigo);
+            turnoenemy(player, enemy);
 
         } else {
             JOptionPane.showMessageDialog(null, "Você perdeu!");
@@ -49,27 +49,27 @@ public class Battle {
         }
     }
 
-    public void turnoInimigo(PokemonEntity jogador, PokemonEntity inimigo) {
-        turnoAtual++;
+    public void turnoenemy(PokemonEntity player, PokemonEntity enemy) {
+        currencyTurn++;
 
-        if (inimigo.getHp() > 0) {
+        if (enemy.getHp() > 0) {
             Random rand = new Random();
             int opEnemy = 0;
-            Attacks atqInimigo = inimigo.getAttack(opEnemy);
+            Attacks atkEnemy = enemy.getAttack(opEnemy);
 
             do {
                 opEnemy = rand.nextInt(4);
-                atqInimigo = inimigo.getAttack(opEnemy);
-            } while (inimigo.attackIsNull(opEnemy));
+                atkEnemy = enemy.getAttack(opEnemy);
+            } while (enemy.attackIsNull(opEnemy));
 
-            if (!inimigo.attackIsNull(opEnemy)) {
+            if (!enemy.attackIsNull(opEnemy)) {
                 JOptionPane.showMessageDialog(null,
-                        "Vez do adversario \n" + inimigo.getName() + ":" + inimigo.getHp() + "/"
-                                + inimigo.getMaxHp()
-                                + "\n" + jogador.getName() + ":" + jogador.getHp() + "/" + jogador.getMaxHp());
+                        "Vez do adversario \n" + enemy.getName() + ":" + enemy.getHp() + "/"
+                                + enemy.getMaxHp()
+                                + "\n" + player.getName() + ":" + player.getHp() + "/" + player.getMaxHp());
 
-                atqInimigo.atacando(inimigo, jogador);
-                turnoJogador(jogador, inimigo);
+                atkEnemy.attacking(enemy, player);
+                turnPlayer(player, enemy);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Você venceu!");

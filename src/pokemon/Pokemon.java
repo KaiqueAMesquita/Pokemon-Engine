@@ -7,7 +7,6 @@ import pokecomp.attacks.Attacks;
 import pokecomp.points.*;
 
 public class Pokemon {
-    private String pokedexName; // Nome Pokemon
     private String name; // Nome Pokemon
     private LevelGrowth levelType; // Tipo de crescimento do nível
     private int baseHp; // Pontos de Vida (HP)

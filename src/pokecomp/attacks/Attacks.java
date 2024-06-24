@@ -5,13 +5,13 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import pokebattle.BattleEffet;
+import pokebattle.BattleEffect;
 import pokecomp.stats.Stats;
 
 public class Attacks {
     private Types tipo;
     private String name;
-    public BattleEffet tb;
+    public BattleEffect tb;
     private int poder;
     private Stats status;
     private Stats statuS;
@@ -26,9 +26,9 @@ public class Attacks {
 
     public int medirEfetividade(PokemonEntity atacado) {
         double efetivS = -1;
-        double efetivP = tb.getEfetividade(this.tipo, atacado.getPokemon().getTypeOne());
+        double efetivP = tb.getEffectiveness(this.tipo, atacado.getPokemon().getTypeOne());
         if (atacado.getPokemon().getTypeTwo() != null) {
-            efetivS = tb.getEfetividade(this.tipo, atacado.getPokemon().getTypeTwo());
+            efetivS = tb.getEffectiveness(this.tipo, atacado.getPokemon().getTypeTwo());
         }
         if (efetivS > -1) {
             return (int) (efetivP * efetivS);
@@ -71,7 +71,7 @@ public class Attacks {
         return statuS;
     }
 
-    public void atacando(PokemonEntity atacando, PokemonEntity atacado) {
+    public void attacking(PokemonEntity atacando, PokemonEntity atacado) {
         int damage = (int) (((2 * atacando.getLevel() / 5 + 2) * this.poder
                 * (atacando.getAttack() / atacado.getDefense()) + 2) / 50) * medirEfetividade(atacado);
         if (damage <= 1) {

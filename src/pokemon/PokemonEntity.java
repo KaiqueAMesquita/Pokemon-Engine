@@ -126,8 +126,7 @@ public class PokemonEntity {
 
         // Itera sobre os ataques disponíveis do Pokémon
         for (int i = 0; i < pokemon.getAttacks().length; i++) {
-            // Verifica se ainda há espaço no array de ataques e se o ataque pode ser
-            // aprendido
+            // z
             if (count < 4 && pokemon.getLearningLevel()[i] <= level) {
                 attacks[count] = pokemon.getAttacks()[i]; // Adiciona o ataque ao array de ataques
                 count++; // Incrementa o contador

@@ -3,7 +3,7 @@ package pokebattle;
 import pokemon.*;
 
 public class BattleEffect {
-    private static double[][] efetividade = {
+    private static double[][] effectiveTbl = {
             // ---------NOR--FIR--WAT--ELE--GRA--ICE--FIG--POI--GRO--FLY--PSY--BUG--ROC--GHO--DRA--STE--FAI
             /* NOR */ { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.0, 1.0, 0.5, 1.0 }, // NOR
             /* FIR */ { 1.0, 0.5, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 0.5, 2.0, 1.0 }, // FIR
@@ -24,8 +24,8 @@ public class BattleEffect {
             /* FAI */ { 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 0.5 } // FAI
     };
 
-    public static double getEfetividade(Types atacante, Types defensor) {
-        return efetividade[atacante.ordinal()][defensor.ordinal()];
+    public static double getEffectiveness(Types attacker, Types defender) {
+        return effectiveTbl[attacker.ordinal()][defender.ordinal()];
     }
 
 }
