@@ -32,13 +32,13 @@ public class Battle {
                 int op = Integer
                         .parseInt(JOptionPane.showInputDialog(player.getName() + " - " + player.getHp() + "/"
                                 + player.getMaxHp() + "\n" + enemy.getName() + " - " + enemy.getHp() + "/"
-                                + enemy.getMaxHp() + "\nEscolha seu attack: " + opAttack));
+                                + enemy.getMaxHp() + "\nEscolha seu ataque: " + opAttack));
                 if (!player.attackIsNull(op)) {
                     Attacks attack = player.getAttack(op);
                     attack.attacking(player, enemy);
                     break;
                 } else {
-                    JOptionPane.showMessageDialog(null, "Esse attack não é válido");
+                    JOptionPane.showMessageDialog(null, "Esse ataque não é válido");
                 }
             } while (true);
             turnoenemy(player, enemy);
