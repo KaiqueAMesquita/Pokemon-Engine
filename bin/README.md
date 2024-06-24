@@ -1,7 +1,5 @@
 # Pokemon-Engine
 
-## Descrição
-- Um simulador de batalhas pokémons, em *desenvolvimento!*
 ## Uso
 - Somente é necessário o Java juntamente com **JDK(Java Development Kit)**, além de uma IDE que suporte Java para dar início a edição e uso do proeto
 - Versão do Java ultilizado: **21.0.2**
