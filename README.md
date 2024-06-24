@@ -1,18 +1,18 @@
 # Pokemon-Engine
 
 ## Uso
-- Somente é necessário o Java juntamente com **JDK(Java Development Kit)**, além de uma IDE que suporte Java para dar início a edição e uso do proeto
-- Versão do Java ultilizado: **21.0.2**
+- É necessário ter o Java instalado, juntamente com o **JDK (Java Development Kit)**, além de uma IDE que suporte Java para iniciar a edição e uso do projeto.
+- Versão do Java utilizada: **21.0.2**
 ## Sobre o projeto
-Comecei com a ideia de me desafiar e melhorar minhas habilidades de lógica e Java, e pra isso nada melhor do que usar pokémon, um de meus jogos favoritos, a ideia é criar um programa que simule batalhas pokémons exatamento como no jogo.😀
+Comecei com a ideia de me desafiar e melhorar minhas habilidades em lógica e Java, e para isso nada melhor do que usar Pokémon, um dos meus jogos favoritos. A ideia é criar um programa que simule batalhas Pokémon exatamente como no jogo.😀
 
 ### Funcionalidades adicionadas
 - Sistema de tipos;
 - Sistema de efetividade de ataque;
 - Sistema de batalha e ataques;
-- Sistema de coleta de pokemons com leitura de txt:
+- Sistema de coleta de Pokemons com leitura de arquivo txt:
 - Ex.:
-  **Para adicionar pokémons somente seguir o mesmo modelo no arquivo assets/pokedex.txt**
+  **Para adicionar Pokémon, siga o modelo no arquivo assets/pokedex.txt**
 
   ```txt
   #-------#
@@ -27,17 +27,17 @@ Comecei com a ideia de me desafiar e melhorar minhas habilidades de lógica e Ja
   levelType: MEDIUM_SLOW
   #-------#
   
-- Sistema de calculo de XP/Level do pokémon;
-- Sistema de calculo de Status do pokémon;
+- Sistema de cálculo de XP/Nível do Pokémon;
+- Sistema de cálculo de Status do Pokémon;
 - Batalha JOptionPane;
-- Sistema de EV/IV, *afetando somente na função de status,valor manual* (incompleto);
+- Sistema de EV/IV (afetando somente na função de status, valor manual) - incompleto;
   
 ### Funcionalidades pretendidas
 - Geração de ataques por txt;
-- Adição de ataques próprios a cada pokémon (ataques pra aprender já criado);
+- Adição de ataques específicos para cada Pokémon (função *learningAttack()* ataques para aprender já criados);
 - Sistema de ganho de XP(após vitória);
 - Sistema de EV/IV completo;
-- Mais fatores afetando o dano (tipo *(se o pokemon tem o tipo do ataque)*, clima e etc);
+- Mais fatores afetando o dano (tipo do Pokémon, clima, etc.);
 - Sistema de party (equipe);
 - Sistema de itens de batalha;
 - Interface Gráfica;
