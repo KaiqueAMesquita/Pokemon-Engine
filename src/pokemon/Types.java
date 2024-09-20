@@ -4,7 +4,7 @@ public enum Types {
     NORMAL,
     FIRE,
     WATER,
-    ELETRIC,
+    ELECTRIC,
     GRASS,
     ICE,
     FIGHTING,
@@ -17,5 +17,6 @@ public enum Types {
     GHOST,
     DRAGON,
     STEEL,
-    FAIRY
+    FAIRY,
+    DARK
 }

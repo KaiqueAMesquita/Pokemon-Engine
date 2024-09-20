@@ -1,9 +1,6 @@
 package pokemon;
 
-import java.util.ArrayList;
-import java.util.Random;
-import pokecomp.stats.*;
-import pokecomp.attacks.Attacks;
+import pokecomp.move.Move;
 import pokecomp.points.*;
 
 public class Pokemon {
@@ -18,11 +15,12 @@ public class Pokemon {
 
     private Types typeOne; // Tipo principal
     private Types typeTwo; // Tipo secundário
-    private Attacks[] attacks;// Ataques que o pokemon pode aprender
+    private Move[] moves;// Ataques que o pokemon pode aprender
     private int[] learningLevel = { 1, 1, 2, 5 }; // Niveis necessarios para aprender ataques
+    private int[] effortValues = new int[5];// Ev's do pokémon
 
     public Pokemon(String name, int hp, int speed, int attack, int spdAttack, int defense, int spdDefense,
-            Types typeOne, Types typeTwo, LevelGrowth levelType, Attacks[] attacks, int qnt) {
+            Types typeOne, Types typeTwo, LevelGrowth levelType, Move[] moves, int[] effortValues) {
         this.name = name;
         this.baseHp = hp;
         this.baseSpeed = speed;
@@ -33,8 +31,8 @@ public class Pokemon {
         this.typeOne = typeOne;
         this.typeTwo = typeTwo;
         this.levelType = levelType;
-        this.attacks = new Attacks[qnt];
-        this.attacks = attacks;
+        this.moves = moves;
+        this.effortValues = effortValues;
     }
 
     // getters e setters
@@ -94,17 +92,17 @@ public class Pokemon {
         this.baseSpdDefense = spdDefense;
     }
 
-    public Attacks[] getAttacks() {
-        return this.attacks;
+    public Move[] getMoves() {
+        return this.moves;
     }
 
-    public void setAttacks(Attacks[] attacks) {
-        this.attacks = attacks;
+    public void setMoves(Move[] Move) {
+        this.moves = moves;
     }
 
-    public void addAttack(Attacks a) {
-        if (this.attacks[attacks.length] == null) {
-            this.attacks[attacks.length] = a;
+    public void addMove(Move m) {
+        if (this.moves[moves.length] == null) {
+            this.moves[moves.length] = m;
         }
     }
 
@@ -138,6 +136,15 @@ public class Pokemon {
 
     public void setTypeTwo(Types t) {
         this.typeTwo = t;
+    }
+
+    public int[] getEvs() {
+        return this.effortValues;
+
+    }
+
+    public int getEv(int i) {
+        return this.effortValues[i];
     }
 
 }

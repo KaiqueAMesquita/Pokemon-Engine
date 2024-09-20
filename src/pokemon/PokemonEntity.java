@@ -1,11 +1,13 @@
 package pokemon;
 
 import pokecomp.points.LevelGrowth;
+import pokecomp.status.*;
+
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import pokecomp.attacks.*;
-import pokecomp.stats.*;
+import pokecomp.move.Move;
 
 public class PokemonEntity {
     private int id;
@@ -19,27 +21,44 @@ public class PokemonEntity {
     private int speed;
     private int xp;
     private Pokemon pokemon;
-    private Attacks[] attacks = new Attacks[4];
-    private Stats stats;
+    private Move[] moves = new Move[4];
+    private Status status;
     private int maxHp;
+    private Nature nature;
+    private int[] individualValues = new int[5];
 
-    public PokemonEntity(int id, String name, int level, Pokemon pokemon, Stats stats) {
+    public PokemonEntity(int id, String name, int level, Pokemon pokemon, Status status) {
         this.id = id;
         this.name = name;
         this.level = level;
         this.pokemon = pokemon;
-        this.maxHp = calculateHp(1, 1);
+        this.calculateIv();
+        this.maxHp = calculateHp(individualValues[0]);
         this.hp = this.maxHp;
-        this.attack = calculateOtherStats("Attack", 1, 1);
-        this.defense = calculateOtherStats("Defense", 1, 1);
-        this.spdAttack = calculateOtherStats("SpdAttack", 1, 1);
-        this.spdDefense = calculateOtherStats("SpdDefense", 1, 1);
-        this.speed = calculateOtherStats("Speed", 1, 1);
+        this.attack = calculateOtherStats("Attack", individualValues[1]);
+        this.defense = calculateOtherStats("Defense", individualValues[2]);
+        this.spdAttack = calculateOtherStats("SpdMAttack", individualValues[3]);
+        this.spdDefense = calculateOtherStats("SpdDefense", individualValues[4]);
+        this.speed = calculateOtherStats("Speed", individualValues[5]);
         this.xp = calculateXpForLevel(level);
-        this.attacks = putAttacks();
+        this.moves = putMoves();
+        this.nature = generateNature();
+        this.status = null;
 
-        this.stats = Stats.NULO;
+    }
 
+    private Nature generateNature() {
+        Random rand = new Random();
+        int nature = rand.nextInt(25);
+        return Nature.values()[nature];
+    }
+
+    private void calculateIv() {
+        Random rand = new Random();
+        for (int i = 0; i < 5; i++) {
+            int iv = rand.nextInt(32);
+            this.individualValues[i] = iv;
+        }
     }
 
     private int calculateXpForLevel(int level) {
@@ -107,10 +126,10 @@ public class PokemonEntity {
             for (int j = pokemon.getLearningLevel().length; j > 0; j--) {
                 if (pokemon.getLearningLevel()[j] == level) {
                     int resposta = JOptionPane.showConfirmDialog(null,
-                            "Deseja aprender? " + pokemon.getAttacks()[j], "Confirmação",
+                            "Deseja aprender? " + pokemon.getMoves()[j], "Confirmação",
                             JOptionPane.YES_NO_OPTION);
                     if (resposta == JOptionPane.YES_OPTION) {
-                        this.attacks[3] = pokemon.getAttacks()[j];
+                        this.moves[3] = pokemon.getMoves()[j];
                     } else {
                         JOptionPane.showMessageDialog(null, "Você NÃO quis aprender o ataque!");
                         break;
@@ -120,53 +139,58 @@ public class PokemonEntity {
         }
     }
 
-    public Attacks[] putAttacks() {
-        Attacks[] attacks = new Attacks[4]; // Tamanho máximo do array de ataques
+    public Move[] putMoves() {
+        Move[] moves = new Move[4]; // Tamanho máximo do array de ataques
         int count = 0; // Contador para o número de ataques adicionados
 
         // Itera sobre os ataques disponíveis do Pokémon
-        for (int i = 0; i < pokemon.getAttacks().length; i++) {
+        for (int i = 0; i < pokemon.getMoves().length; i++) {
             // z
             if (count < 4 && pokemon.getLearningLevel()[i] <= level) {
-                attacks[count] = pokemon.getAttacks()[i]; // Adiciona o ataque ao array de ataques
+                moves[count] = pokemon.getMoves()[i]; // Adiciona o ataque ao array de ataques
                 count++; // Incrementa o contador
             }
         }
 
-        return attacks;
+        return moves;
     }
 
     public boolean attackIsNull(int i) {
-        return this.attacks[i] == null;
+        return this.moves[i] == null;
     }
 
-    public int calculateHp(int iv, int ev) {
-        int realHp = ((2 * this.pokemon.getHp() + iv + (ev / 4)) * this.level / 100) + this.level + 10;
+    public int calculateHp(int iv) {
+        int realHp = ((2 * this.pokemon.getHp() + iv + (pokemon.getEv(0) / 4)) * this.level / 100) + this.level + 10;
 
         return realHp;
     }
 
-    public int calculateOtherStats(String stat, int iv, int ev) {
+    public int calculateOtherStats(String stat, int iv) {
         int realStat = 0;
 
         switch (stat) {
             case "Attack":
-                realStat = (int) (((2 * this.pokemon.getAttack() + iv + (ev / 4) * this.level / 100) + 5) * 1.1);
+                realStat = (int) (((2 * this.pokemon.getAttack() + iv + (pokemon.getEv(2) / 4) * this.level / 100) + 5)
+                        * nature.getAttackMod());
                 break;
             case "Defense":
-                realStat = (int) (((2 * this.pokemon.getDefense() + iv + (ev / 4) * this.level / 100) + 5) * 1.1);
+                realStat = (int) (((2 * this.pokemon.getDefense() + iv + (pokemon.getEv(4) / 4) * this.level / 100) + 5)
+                        * nature.getDefenseMod());
 
                 break;
             case "SpdAttack":
-                realStat = (int) (((2 * this.pokemon.getSpdAttack() + iv + (ev / 4) * this.level / 100) + 5) * 1.1);
+                realStat = (int) (((2 * this.pokemon.getSpdAttack() + iv + (pokemon.getEv(3) / 4) * this.level / 100)
+                        + 5) * nature.getSpdAttackMod());
 
                 break;
             case "SpdDefense":
-                realStat = (int) (((2 * this.pokemon.getSpdDefense() + iv + (ev / 4) * this.level / 100) + 5) * 1.1);
+                realStat = (int) (((2 * this.pokemon.getSpdDefense() + iv + (pokemon.getEv(5) / 4) * this.level / 100)
+                        + 5) * nature.getSpdDefenseMod());
 
                 break;
             case "Speed":
-                realStat = (int) (((2 * this.pokemon.getSpeed() + iv + (ev / 4) * this.level / 100) + 5) * 1.1);
+                realStat = (int) (((2 * this.pokemon.getSpeed() + iv + (pokemon.getEv(1) / 4) * this.level / 100) + 5)
+                        * nature.getSpeedMod());
 
                 break;
 
@@ -176,8 +200,8 @@ public class PokemonEntity {
     }
 
     // verifica se o slot de ataque está vazio
-    public boolean attackNull(int i) {
-        if (this.attacks[i] == null)
+    public boolean moveNull(int i) {
+        if (this.moves[i] == null)
             return true;
         else
             return false;
@@ -271,12 +295,12 @@ public class PokemonEntity {
         this.pokemon = pokemon;
     }
 
-    public Stats getStats() {
-        return this.stats;
+    public Status getStatus() {
+        return this.status;
     }
 
-    public void setStats(Stats s) {
-        this.stats = s;
+    public void setStatus(Status s) {
+        this.status = s;
     }
 
     public int getMaxHp() {
@@ -287,16 +311,25 @@ public class PokemonEntity {
         this.maxHp = hp;
     }
 
-    public Attacks[] getAttacks() {
-        return this.attacks;
+    public Move[] getMoves() {
+        return this.moves;
     }
 
-    public Attacks getAttack(int i) {
-        return this.attacks[i];
+    public Move getMove(int i) {
+        return this.moves[i];
     }
 
-    public void setAttacks(Attacks[] attacks) {
-        this.attacks = attacks;
+    public void setMoves(Move[] moves) {
+        this.moves = moves;
+    }
+
+    // get e set nature
+    public Nature getNature() {
+        return this.nature;
+    }
+
+    public void setNature(Nature nature) {
+        this.nature = nature;
     }
 
 }

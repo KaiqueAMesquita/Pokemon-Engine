@@ -8,6 +8,7 @@ spdAttack: 65
 defense: 49
 spdDefense: 65
 levelType: MEDIUM_SLOW
+ev: 0, 0, 0, 1, 0, 0 
 #-------#
 nome: Charmander
 tipoP: FIRE
@@ -18,6 +19,7 @@ spdAttack: 60
 defense: 43
 spdDefense: 50
 levelType: MEDIUM_SLOW
+ev: 0, 1, 0, 0, 0,  0 
 #-------#
 nome: Squirtle
 tipoP: WATER
@@ -28,9 +30,10 @@ spdAttack: 50
 defense: 65
 spdDefense: 64
 levelType: MEDIUM_SLOW
+ev: 0, 0, 1, 0, 0, 0 
 #-------#
 nome: Jolteon
-Tipo: ELETRIC
+Tipo: ELECTRIC
 HP: 65
 Velocidade: 130
 Ataque: 65
@@ -38,6 +41,7 @@ AtaqueEspecial: 110
 Defesa: 60
 DefesaEspecial: 95
 levelType: MEDIUM_FAST
+ev: 0, 2, 0, 0, 0, 0 
 #-------#
 Nome: Dragonite
 Tipo: DRAGON, FLYING
@@ -48,6 +52,7 @@ AtaqueEspecial: 100
 Defesa: 95
 DefesaEspecial: 100
 levelType: SLOW
+ev: 0, 0, 3, 0, 0, 0 
 #-------#
 Nome: Vaporeon
 Tipo: WATER
@@ -58,6 +63,7 @@ AtaqueEspecial: 110
 Defesa: 60
 DefesaEspecial: 95
 levelType: MEDIUM_FAST
+ev: 2, 0, 0, 0, 0, 0 
 #-------#
 Nome: Snorlax
 Tipo: NORMAL
@@ -68,6 +74,7 @@ AtaqueEspecial: 65
 Defesa: 65
 DefesaEspecial: 110
 levelType: SLOW
+ev: 2, 0, 0, 0, 0, 0 
 #-------#
 Nome: Pinsir
 Tipo: BUG
@@ -78,3 +85,369 @@ AtaqueEspecial: 55
 Defesa: 100
 DefesaEspecial: 70
 levelType: SLOW
+ev: 0, 0, 2, 0, 0, 0
+#-------# 
+nome: Pidgeot
+tipoP: NORMAL, FLYING
+vida: 83
+speed: 101
+attack: 80
+spdAttack: 70
+defense: 75
+spdDefense: 70
+levelType: MEDIUM_SLOW
+ev: 0, 3, 0, 0, 0, 0
+
+#-------#
+nome: Alakazam
+tipoP: PSYCHIC
+vida: 55
+speed: 120
+attack: 50
+spdAttack: 135
+defense: 45
+spdDefense: 95
+levelType: MEDIUM_SLOW
+ev: 0, 0, 0, 3, 0, 0
+#-------#
+nome: Machamp
+tipoP: FIGHTING
+vida: 90
+speed: 55
+attack: 130
+spdAttack: 65
+defense: 80
+spdDefense: 85
+levelType: MEDIUM_SLOW
+ev: 0, 0, 3, 0, 0, 0
+#-------#
+nome: Gengar
+tipoP: GHOST, POISON
+vida: 60
+speed: 110
+attack: 65
+spdAttack: 130
+defense: 60
+spdDefense: 75
+levelType: MEDIUM_SLOW
+ev: 0, 0, 0, 3, 0, 0
+#-------#
+nome: Onix
+tipoP: ROCK, GROUND
+vida: 35
+speed: 70
+attack: 45
+spdAttack: 30
+defense: 160
+spdDefense: 45
+levelType: MEDIUM_FAST
+ev: 0, 0, 0, 0, 3, 0
+#-------#
+nome: Lapras
+tipoP: WATER, ICE
+vida: 130
+speed: 60
+attack: 85
+spdAttack: 85
+defense: 80
+spdDefense: 95
+levelType: SLOW
+ev: 2, 0, 0, 0, 0, 0
+#-------#
+nome: Arcanine
+tipoP: FIRE
+vida: 90
+speed: 95
+attack: 110
+spdAttack: 100
+defense: 80
+spdDefense: 80
+levelType: SLOW
+ev: 0, 0, 2, 0, 0, 0
+#-------#
+nome: Gyarados
+tipoP: WATER, FLYING
+vida: 95
+speed: 81
+attack: 125
+spdAttack: 60
+defense: 79
+spdDefense: 100
+levelType: SLOW
+ev: 0, 0, 2, 0, 0, 0
+#-------#
+nome: Eevee
+tipoP: NORMAL
+vida: 55
+speed: 55
+attack: 55
+spdAttack: 45
+defense: 50
+spdDefense: 65
+levelType: MEDIUM_FAST
+ev: 0, 0, 0, 0, 0, 1
+#-------#
+nome: Ninetales
+tipoP: FIRE
+vida: 73
+speed: 100
+attack: 76
+spdAttack: 81
+defense: 75
+spdDefense: 100
+levelType: MEDIUM_FAST
+ev: 0, 0, 0, 0, 0, 1
+#-------#
+nome: Jigglypuff
+tipoP: NORMAL, FAIRY
+vida: 115
+speed: 20
+attack: 45
+spdAttack: 45
+defense: 20
+spdDefense: 25
+levelType: FAST
+ev: 2, 0, 0, 0, 0, 0
+#-------#
+nome: Scyther
+tipoP: BUG, FLYING
+vida: 70
+speed: 105
+attack: 110
+spdAttack: 55
+defense: 80
+spdDefense: 80
+levelType: MEDIUM_FAST
+ev: 0, 1, 1, 0, 0, 0
+#-------#
+nome: Electabuzz
+tipoP: ELECTRIC
+vida: 65
+speed: 105
+attack: 83
+spdAttack: 95
+defense: 57
+spdDefense: 85
+levelType: MEDIUM_FAST
+ev: 0, 2, 0, 0, 0, 0
+#-------#
+nome: Magmar
+tipoP: FIRE
+vida: 65
+speed: 93
+attack: 95
+spdAttack: 100
+defense: 57
+spdDefense: 85
+levelType: MEDIUM_FAST
+ev: 0, 0, 0, 2, 0, 0
+#-------#
+nome: Aerodactyl
+tipoP: ROCK, FLYING
+vida: 80
+speed: 130
+attack: 105
+spdAttack: 60
+defense: 65
+spdDefense: 75
+levelType: FAST
+ev: 0, 2, 0, 0, 0, 0
+#-------#
+nome: Kabutops
+tipoP: ROCK, WATER
+vida: 60
+speed: 80
+attack: 115
+spdAttack: 65
+defense: 105
+spdDefense: 70
+levelType: MEDIUM_FAST
+ev: 0, 0, 2, 0, 0, 0
+#-------#
+nome: Omastar
+tipoP: ROCK, WATER
+vida: 70
+speed: 55
+attack: 60
+spdAttack: 115
+defense: 125
+spdDefense: 70
+levelType: MEDIUM_FAST
+ev: 0, 0, 0, 2, 0, 0
+#-------#
+nome: Articuno
+tipoP: ICE, FLYING
+vida: 90
+speed: 85
+attack: 85
+spdAttack: 95
+defense: 100
+spdDefense: 125
+levelType: SLOW
+ev: 0, 0, 0, 0, 0, 3
+#-------#
+nome: Zapdos
+tipoP: ELECTRIC, FLYING
+vida: 90
+speed: 100
+attack: 90
+spdAttack: 125
+defense: 85
+spdDefense: 90
+levelType: SLOW
+ev: 0, 0, 0, 3, 0, 0
+#-------#
+nome: Moltres
+tipoP: FIRE, FLYING
+vida: 90
+speed: 90
+attack: 100
+spdAttack: 125
+defense: 90
+spdDefense: 85
+levelType: SLOW
+ev: 0, 0, 0, 3, 0, 0
+#-------#
+nome: Mewtwo
+tipoP: PSYCHIC
+vida: 106
+speed: 130
+attack: 110
+spdAttack: 154
+defense: 90
+spdDefense: 90
+levelType: SLOW
+ev: 0, 0, 0, 3, 0, 0
+#-------#
+nome: Mew
+tipoP: PSYCHIC
+vida: 100
+speed: 100
+attack: 100
+spdAttack: 100
+defense: 100
+spdDefense: 100
+levelType: MEDIUM_SLOW
+ev: 0, 0, 0, 0, 0, 3
+#-------#
+nome: Tauros
+tipoP: NORMAL
+vida: 75
+speed: 110
+attack: 100
+spdAttack: 40
+defense: 95
+spdDefense: 70
+levelType: SLOW
+ev: 0, 1, 1, 0, 0, 0
+#-------#
+nome: Ditto
+tipoP: NORMAL
+vida: 48
+speed: 48
+attack: 48
+spdAttack: 48
+defense: 48
+spdDefense: 48
+levelType: MEDIUM_FAST
+ev: 1, 0, 0, 0, 0, 0
+#-------#
+nome: Treecko
+tipoP: GRASS
+vida: 40
+speed: 70
+attack: 45
+spdAttack: 65
+defense: 35
+spdDefense: 55
+levelType: MEDIUM_SLOW
+ev: 0, 1, 0, 0, 0, 0
+#-------#
+nome: Grovyle
+tipoP: GRASS
+vida: 50
+speed: 95
+attack: 65
+spdAttack: 85
+defense: 45
+spdDefense: 65
+levelType: MEDIUM_SLOW
+ev: 0, 2, 0, 0, 0, 0
+#-------#
+nome: Sceptile
+tipoP: GRASS
+vida: 70
+speed: 120
+attack: 85
+spdAttack: 105
+defense: 65
+spdDefense: 85
+levelType: MEDIUM_SLOW
+ev: 0, 3, 0, 0, 0, 0
+#-------#
+nome: Torchic
+tipoP: FIRE
+vida: 45
+speed: 45
+attack: 60
+spdAttack: 70
+defense: 40
+spdDefense: 50
+levelType: MEDIUM_SLOW
+ev: 0, 0, 0, 1, 0, 0
+#-------#
+nome: Combusken
+tipoP: FIRE, FIGHTING
+vida: 60
+speed: 55
+attack: 85
+spdAttack: 85
+defense: 60
+spdDefense: 60
+levelType: MEDIUM_SLOW
+ev: 0, 1, 1, 0, 0, 0
+#-------#
+nome: Blaziken
+tipoP: FIRE, FIGHTING
+vida: 80
+speed: 80
+attack: 120
+spdAttack: 110
+defense: 70
+spdDefense: 70
+levelType: MEDIUM_SLOW
+ev: 0, 3, 0, 0, 0, 0
+#-------#
+nome: Mudkip
+tipoP: WATER
+vida: 50
+speed: 40
+attack: 70
+spdAttack: 50
+defense: 50
+spdDefense: 50
+levelType: MEDIUM_SLOW
+ev: 0, 1, 0, 0, 0, 0
+#-------#
+nome: Marshtomp
+tipoP: WATER, GROUND
+vida: 70
+speed: 50
+attack: 85
+spdAttack: 60
+defense: 70
+spdDefense: 70
+levelType: MEDIUM_SLOW
+ev: 0, 2, 0, 0, 0, 0
+#-------#
+nome: Swampert
+tipoP: WATER, GROUND
+vida: 100
+speed: 60
+attack: 110
+spdAttack: 85
+defense: 90
+spdDefense: 90
+levelType: MEDIUM_SLOW
+ev: 0, 3, 0, 0, 0, 0
+#-------#

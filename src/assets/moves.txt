@@ -1,0 +1,241 @@
+#------#
+id: 1
+name: Tackle 
+category: Physical
+type: NORMAL
+pp: 35
+define: 40, 0, 100
+effect: 0, 1
+#------#
+id: 1
+name: Ember 
+category: Special
+type: NORMAL
+pp: 35
+define: 40, 0, 100
+effect: 2, 20
+#------#
+id: 3
+name: Double Hit
+category: Physical
+type: NORMAL
+pp: 10
+define: 35, 0, 20
+effect:0, 1
+function: TWO_HITS
+#------#
+id: 4
+name: Bite
+category: Physical
+type: DARK
+pp: 25
+define: 60, 0, 100
+effect:7, 30
+#------#
+id: 5
+name: Blizzard
+category: Special
+type: ICE
+pp: 10
+define: 110, 0, 70
+effect: 3, 10
+#------#
+id: 6
+name: Water Gun
+category: Special
+type: WATER
+pp: 25
+define: 40, 0, 100
+effect: 0, 1
+#------#
+id: 7
+name: Vine Whip
+category: Physical
+type: GRASS
+pp: 25
+define: 45, 0, 100
+effect: 0, 1
+#------#
+id: 8
+name: Quick Attack
+category: Physical
+type: NORMAL
+pp: 30
+define: 40, 1, 100
+effect: 0, 1
+#------#
+id: 9
+name: Thunder Shock
+category: Special
+type: ELECTRIC
+pp: 30
+define: 40, 0, 100
+effect: 5, 10
+#------#
+id: 10
+name: Scratch
+category: Physical
+type: NORMAL
+pp: 35
+define: 40, 0, 100
+effect: 0, 1
+#------#
+id: 11
+name: Bubble
+category: Special
+type: WATER
+pp: 30
+define: 40, 0, 100
+effect: 5, 10
+#------#
+id: 12
+name: Gust
+category: Special
+type: FLYING
+pp: 35
+define: 40, 0, 100
+effect: 0, 1
+#------#
+id: 13
+name: Confusion
+category: Special
+type: PSYCHIC
+pp: 25
+define: 50, 0, 100
+effect: 6, 10
+#------#
+id: 14
+name: Low Kick
+category: Physical
+type: FIGHTING
+pp: 20
+define: 50, 0, 100
+effect: 0, 1
+#------#
+id: 15
+name: Peck
+category: Physical
+type: FLYING
+pp: 35
+define: 35, 0, 100
+effect: 0, 1
+#------#
+id: 16
+name: Poison Sting
+category: Physical
+type: POISON
+pp: 35
+define: 15, 0, 100
+effect: 1, 30
+#------#
+id: 17
+name: Pound
+category: Physical
+type: NORMAL
+pp: 35
+define: 40, 0, 100
+effect: 0, 1
+#------#
+id: 18
+name: Flame Wheel
+category: Physical
+type: FIRE
+pp: 25
+define: 60, 0, 100
+effect: 2, 10
+#------#
+id: 19
+name: Mud-Slap
+category: Special
+type: GROUND
+pp: 10
+define: 20, 0, 100
+effect: 0, 1
+#------#
+id: 20
+name: Karate Chop
+category: Physical
+type: FIGHTING
+pp: 25
+define: 50, 0, 100
+effect: 0, 1
+#------#
+id: 21
+name: Thunderbolt
+category: Special
+type: ELECTRIC
+pp: 15
+define: 90, 0, 100
+effect: 5, 10
+#------#
+id: 22
+name: Flamethrower
+category: Special
+type: FIRE
+pp: 15
+define: 90, 0, 100
+effect: 2, 10
+#------#
+id: 23
+name: Ice Beam
+category: Special
+type: ICE
+pp: 10
+define: 90, 0, 100
+effect: 3, 10
+#------#
+id: 24
+name: Sludge Bomb
+category: Special
+type: POISON
+pp: 10
+define: 90, 0, 100
+effect: 1, 30
+#------#
+id: 25
+name: Body Slam
+category: Physical
+type: NORMAL
+pp: 15
+define: 85, 0, 100
+effect: 5, 30
+#------#
+id: 26
+name: Spark
+category: Physical
+type: ELECTRIC
+pp: 20
+define: 65, 0, 100
+effect: 5, 30
+#------#
+id: 27
+name: Fire Punch
+category: Physical
+type: FIRE
+pp: 15
+define: 75, 0, 100
+effect: 2, 10
+#------#
+id: 28
+name: Water Pulse
+category: Special
+type: WATER
+pp: 20
+define: 60, 0, 100
+effect: 6, 20
+#------#
+id: 29
+name: Air Slash
+category: Special
+type: FLYING
+pp: 15
+define: 75, 0, 95
+effect: 7, 30
+#------#
+id: 30
+name: Shadow Ball
+category: Special
+type: GHOST
+pp: 15
+define: 80, 0, 100
+effect: 6, 20

@@ -1,0 +1,27 @@
+package pokecomp.status;
+
+public enum StatusType {
+
+    NULL,
+    PARALYZE,
+    SLEEP,
+    FREEZE,
+    POISON,
+    BURN,
+    HEAL,
+    CONFUSION,
+    FLINCH,
+    ACCURACY_UP,
+    ACCURACY_DOWN,
+    SPEED_UP,
+    SPEED_DOWN,
+    SPECIAL_ATTACK_UP,
+    SPECIAL_DEFENSE_UP,
+    SPECIAL_ATTACK_DOWN,
+    SPECIAL_DEFENSE_DOWN,
+    ATTACK_DOWN,
+    ATTACK_UP,
+    DEFENSE_DOWN,
+    DEFENSE_UP
+
+}

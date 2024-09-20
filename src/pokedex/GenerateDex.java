@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import javax.swing.text.Style;
 
 import pokemon.*;
-import pokecomp.attacks.*;
+
 import pokecomp.points.LevelGrowth;
 
 public class GenerateDex {
 
     public static ArrayList<Pokemon> pokemonsArray = new ArrayList<>();
-    public AttackList atk = new AttackList();
 
     public GenerateDex() {
         pokemonsArray = generateList();
@@ -30,7 +29,7 @@ public class GenerateDex {
             while (line != null) {
                 if (line.equals("#-------#")) {
                     String name = readFile.readLine().split(": ")[1];
-                    String[] tipos = readFile.readLine().split(": ")[1].split(", "); // Divide os tipos em um array
+                    String[] tipos = readFile.readLine().split(": ")[1].split(", ");
                     String type1 = tipos[0].replace(",", "").trim();
                     String type2 = tipos.length > 1 ? tipos[1] : null;
                     Types typeO = Types.valueOf(type1);
@@ -46,8 +45,16 @@ public class GenerateDex {
                     int spdDefense = Integer.parseInt(readFile.readLine().split(": ")[1]);
                     String level = readFile.readLine().split(": ")[1];
                     LevelGrowth levelType = LevelGrowth.valueOf(level);
+                    String[] ev = readFile.readLine().split(": ")[1].split(", ");
+                    int[] effortValues = { 0, 0, 0, 0, 0, 0 };
+                    for (int i = 0; i < ev.length; i++) {
+                        ev[i] = ev[i].replace(",", "").trim();
+                        effortValues[i] = Integer.parseInt(ev[i]);
+                    }
+                    System.out.println(name);
+
                     Pokemon p = new Pokemon(name, hp, speed, attack, spdAttack, defense, spdDefense, typeO, typeT,
-                            levelType, preencherAtaques(atk.ataquesLista), 10);
+                            levelType, null, effortValues);
                     pokemons.add(p);
 
                 } else {
@@ -62,16 +69,7 @@ public class GenerateDex {
             System.err.printf("Erro na abertura do arquivo: %s.\n",
                     e.getMessage());
         }
-        System.out.println(pokemons);
         return pokemons;
-    }
-
-    public static Attacks[] preencherAtaques(ArrayList<Attacks> atqs) {
-        Attacks[] ataques = new Attacks[atqs.size()];
-        for (int i = 0; i < atqs.size(); i++) {
-            ataques[i] = atqs.get(i);
-        }
-        return ataques;
     }
 
 }
